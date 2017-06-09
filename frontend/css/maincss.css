@@ -1,0 +1,38 @@
+html *{
+   font-family: Candara !important;
+}
+
+div{
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+}
+
+.buttonHolder{
+    text-align: center;
+}
+
+#mainPage{
+    width: auto;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+#SignUp{
+    width: 45%;
+    float: left;
+    border-style: dotted;
+    border-color: grey;
+}
+
+#SignIn{
+    width: 45%;
+    border-style: dotted;
+    border-color: grey;
+    float: left;
+}
+
+#clear{
+    clear: both;
+}
