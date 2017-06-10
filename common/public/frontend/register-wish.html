@@ -28,16 +28,15 @@
       var wishesRef = database.ref('wishes/');
       var newWishRef = wishesRef.push();
 
-      var x = document.getElementById("wishForm");
-      var shortTitleValue = x.elements[0].value;
-      var fullDescriptionValue = x.elements[1].value;
-      var skillsValue  = x.elements[2].value;
-      var servicesValue = x.elements[3].value;
-      var equipmentValue = x.elements[4].value;
-      var locationValue = x.elements[5].value;
-      var deadlineValue = x.elements[6].value;
-      var costValue = x.elements[7].value;
-      var raisedValue = x.elements[8].value;
+      const shortTitleValue = document.getElementById("short-title").value;
+      const fullDescriptionValue = document.getElementById("full-description").value;
+      const skillsValue = document.getElementById("skills").value;
+      const servicesValue = document.getElementById("services").value;
+      const equipmentValue = document.getElementById("equipment").value;
+      const locationValue = document.getElementById("location").value;
+      const deadlineValue = document.getElementById("deadline").value;
+      const costValue = document.getElementById("cost").value;
+      const raisedValue = document.getElementById("raised").value;
 
       newWishRef.set({
         shortTitle: shortTitleValue,

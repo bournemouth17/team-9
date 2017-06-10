@@ -1,87 +1,85 @@
-@@ -0,0 +1,86 @@
-+<!DOCTYPE html>
-+<html>
-+<head>
-+
-+  <script src="https://www.gstatic.com/firebasejs/4.1.1/firebase-app.js"></script>
-+  <script src="https://www.gstatic.com/firebasejs/4.1.1/firebase-auth.js"></script>
-+  <script src="https://www.gstatic.com/firebasejs/4.1.1/firebase-database.js"></script>
-+  <script src="https://www.gstatic.com/firebasejs/4.1.1/firebase-messaging.js"></script>
-+  <!-- <script src="https://www.gstatic.com/firebasejs/4.1.1/firebase-storage.js"></script> -->
-+
-+  <script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
-+  <script>
-+    // Initialize Firebase
-+    var config = {
-+      apiKey: "AIzaSyCBu5uQ-q5RfRx6hOohDx664I37NJ2SNIU",
-+      authDomain: "makeawish-bfc7f.firebaseapp.com",
-+      databaseURL: "https://makeawish-bfc7f.firebaseio.com",
-+      projectId: "makeawish-bfc7f",
-+      storageBucket: "makeawish-bfc7f.appspot.com",
-+      messagingSenderId: "794956668719"
-+    };
-+    firebase.initializeApp(config);
-+
-+    // Get a reference to the database service
-+    var database = firebase.database();
-+
-+    function writeUserData() {
-+      var usersRef = database.ref('users/');
-+      var newUserRef = usersRef.push();
-+
-+      var x = document.getElementById("detailsForm");
-+      var firstnameValue = x.elements[0].value;
-+      var lastnameValue = x.elements[1].value;
-+      var emailValue  = x.elements[2].value;
-+      var addressValue = x.elements[3].value;
-+      var radiusValue = x.elements[4].value;
-+      var phoneNumberValue = x.elements[5].value;
-+
-+      newUserRef.set({
-+        firstname: firstnameValue,
-+        lastname: lastnameValue,
-+        email: emailValue,
-+        address: addressValue,
-+        radius: radiusValue,
-+        phoneNumber: phoneNumberValue
-+      });
-+    }
-+
-+    function writeNewSkill(skillName) {
-+      var skillssRef = database.ref('skills/');
-+      var newSkillRef = skillssRef.push();
-+
-+      newSkillRef.set({
-+        name: skillName
-+      });
-+    }
-+
-+  </script>
-+</head>
-+
-+<body>
-+  <form id="detailsForm" action="" method="post" onsubmit="writeUserData()">
-+    First name:<br>
-+    <input type="text" id="firstname" name="firstname" value="">
-+    <br>
-+    Last name:<br>
-+    <input type="text" id="lastname" name="lastname" value="">
-+    <br>
-+    Email:<br>
-+    <input type="email" id="email" name="email" value="">
-+    <br>
-+    Address:<br>
-+    <input type="text" id="address" name="address" value="">
-+    <br>
-+    Radius of interest:<br>
-+    <input type="text" id="radius" name="radius" value="">
-+    <br>
-+    Contact phone number:<br>
-+    <input type="text" id="phone-number" name="phone-number" value="">
-+    <br><br>
-+    <input type="submit" value="Submit">
-+    <!-- <button onclick="writeUserData()">Try it</button> -->
-+  </form>
-+
-+</body>
-+</html>
+<!DOCTYPE html>
+<html>
+<head>
+
+  <script src="https://www.gstatic.com/firebasejs/4.1.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.1.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.1.1/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.1.1/firebase-messaging.js"></script>
+  <!-- <script src="https://www.gstatic.com/firebasejs/4.1.1/firebase-storage.js"></script> -->
+
+  <script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyCBu5uQ-q5RfRx6hOohDx664I37NJ2SNIU",
+      authDomain: "makeawish-bfc7f.firebaseapp.com",
+      databaseURL: "https://makeawish-bfc7f.firebaseio.com",
+      projectId: "makeawish-bfc7f",
+      storageBucket: "makeawish-bfc7f.appspot.com",
+      messagingSenderId: "794956668719"
+    };
+    firebase.initializeApp(config);
+
+    // Get a reference to the database service
+    var database = firebase.database();
+
+    function writeUserData() {
+      var usersRef = database.ref('users/');
+      var newUserRef = usersRef.push();
+
+      const firstnameValue = document.getElementById("firstname").value;
+      const lastnameValue = document.getElementById("lastname").value;
+      const emailValue  = document.getElementById("email").value;
+      const addressValue = document.getElementById("address").value;
+      const radiusValue = document.getElementById("radius").value;
+      const phoneNumberValue = document.getElementById("phone-number").value;
+
+      newUserRef.set({
+        firstname: firstnameValue,
+        lastname: lastnameValue,
+        email: emailValue,
+        address: addressValue,
+        radius: radiusValue,
+        phoneNumber: phoneNumberValue
+      });
+    }
+
+    function writeNewSkill(skillName) {
+      var skillssRef = database.ref('skills/');
+      var newSkillRef = skillssRef.push();
+
+      newSkillRef.set({
+        name: skillName
+      });
+    }
+
+  </script>
+</head>
+
+<body>
+  <form id="detailsForm" action="" method="post" onsubmit="writeUserData()">
+    First name:<br>
+    <input type="text" id="firstname" value="">
+    <br>
+    Last name:<br>
+    <input type="text" id="lastname" value="">
+    <br>
+    Email:<br>
+    <input type="email" id="email" value="">
+    <br>
+    Address:<br>
+    <input type="text" id="address" value="">
+    <br>
+    Radius of interest:<br>
+    <input type="text" id="radius" value="">
+    <br>
+    Contact phone number:<br>
+    <input type="text" id="phone-number" value="">
+    <br><br>
+    <input type="submit" value="Submit">
+    <!-- <button onclick="writeUserData()">Try it</button> -->
+  </form>
+
+</body>
+</html>
