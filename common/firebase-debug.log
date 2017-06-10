@@ -1,0 +1,36 @@
+[debug] [2017-06-10T03:08:51.564Z] ----------------------------------------------------------------------
+[debug] [2017-06-10T03:08:51.567Z] Command:      C:\Program Files\nodejs\node.exe C:\Users\andre\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2017-06-10T03:08:51.567Z] CLI Version:  3.9.1
+[debug] [2017-06-10T03:08:51.567Z] Platform:     win32
+[debug] [2017-06-10T03:08:51.567Z] Node Version: v6.11.0
+[debug] [2017-06-10T03:08:51.569Z] Time:         Sat Jun 10 2017 04:08:51 GMT+0100 (GMT Summer Time)
+[debug] [2017-06-10T03:08:51.569Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-06-10T03:08:51.581Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-06-10T03:08:51.581Z] > authorizing via signed-in user
+[debug] [2017-06-10T03:08:51.583Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2017-06-10T03:08:51.583Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token { refresh_token: '1/85fmVdnRzUaIPXljhdbQXPhKNx_2jzxhrBNZzqwp844',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Sat Jun 10 2017 04:08:51 GMT+0100 (GMT Summer Time)
+[debug] [2017-06-10T03:08:51.946Z] <<< HTTP RESPONSE 200
+[debug] [2017-06-10T03:08:51.978Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/makeawish-bfc7f  
+ Sat Jun 10 2017 04:08:51 GMT+0100 (GMT Summer Time)
+[debug] [2017-06-10T03:08:52.906Z] <<< HTTP RESPONSE 200
+[debug] [2017-06-10T03:08:52.906Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/makeawish-bfc7f/tokens  
+ Sat Jun 10 2017 04:08:52 GMT+0100 (GMT Summer Time)
+[debug] [2017-06-10T03:08:53.717Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\andre\Documents\team9-code-for-good\team-9\common'...
+[info] 
+[debug] [2017-06-10T03:08:53.724Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/makeawish-bfc7f  
+ Sat Jun 10 2017 04:08:53 GMT+0100 (GMT Summer Time)
+[debug] [2017-06-10T03:08:54.550Z] <<< HTTP RESPONSE 200
+[debug] [2017-06-10T03:08:54.550Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/794956668719/clients/_:getWebAppConfig  
+ Sat Jun 10 2017 04:08:54 GMT+0100 (GMT Summer Time)
+[debug] [2017-06-10T03:08:55.151Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
+

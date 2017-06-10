@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <script src="https://www.gstatic.com/firebasejs/4.1.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.1.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.1.1/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.1.1/firebase-messaging.js"></script>
+  <!-- <script src="https://www.gstatic.com/firebasejs/4.1.1/firebase-storage.js"></script> -->
+
+  <script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyCBu5uQ-q5RfRx6hOohDx664I37NJ2SNIU",
+      authDomain: "makeawish-bfc7f.firebaseapp.com",
+      databaseURL: "https://makeawish-bfc7f.firebaseio.com",
+      projectId: "makeawish-bfc7f",
+      storageBucket: "makeawish-bfc7f.appspot.com",
+      messagingSenderId: "794956668719"
+    };
+    firebase.initializeApp(config);
+
+    // Get a reference to the database service
+    var database = firebase.database();
+
+    function writeWishData() {
+      var wishesRef = database.ref('wishes/');
+      var newWishRef = wishesRef.push();
+
+      var x = document.getElementById("wishForm");
+      var shortTitleValue = x.elements[0].value;
+      var fullDescriptionValue = x.elements[1].value;
+      var skillsValue  = x.elements[2].value;
+      var servicesValue = x.elements[3].value;
+      var equipmentValue = x.elements[4].value;
+      var locationValue = x.elements[5].value;
+      var deadlineValue = x.elements[6].value;
+      var costValue = x.elements[7].value;
+      var raisedValue = x.elements[8].value;
+
+      newWishRef.set({
+        shortTitle: shortTitleValue,
+        fullDescription: fullDescriptionValue,
+        skills: skillsValue,
+        services: servicesValue,
+        equipment: equipmentValue,
+        location: locationValue,
+        deadline: deadlineValue,
+        cost: costValue,
+        raised: raisedValue
+      });
+    }
+  </script>
+</head>
+
+<body>
+  <form id="wishForm" action="" method="post" onsubmit="writeWishData()">
+    Short title:<br>
+    <input type="text" id="short-title" value="">
+    <br>
+    Full Description:<br>
+    <input type="text" id="full-description" value="">
+    <br>
+    Skills required:<br>
+    <input type="text" id="skills" value="">
+    <br>
+    Services required:<br>
+    <input type="text" id="services" value="">
+    <br>
+    Equipment required:<br>
+    <input type="text" id="equipment" value="">
+    <br>
+    Desired location:<br>
+    <input type="text" id="location" value="">
+    <br>
+    Deadline:<br>
+    <input type="text" id="deadline" value="">
+    <br>
+    Financial cost:<br>
+    <input type="text" id="cost" value="">
+    <br>
+    Amount raised already:<br>
+    <input type="text" id="raised" value="">
+    <br><br>
+    <input type="submit" value="Submit">
+    <!-- <button onclick="writeUserData()">Try it</button> -->
+  </form>
+
+</body>
+</html>
